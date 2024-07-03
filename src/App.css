@@ -1,46 +1,156 @@
-/* Base Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #f06, #f9a);
     margin: 0;
     padding: 0;
+    width: 100vw;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #fff;
+    background-color: #000; /* Couleur de fond de départ */
+    animation: background-color-fade 60s linear infinite;
   }
   
-  .App {
+  @keyframes background-color-fade {
+      0% {
+          background-color: #ff0000; /* Rouge */
+      }
+      3.33% {
+          background-color: #ff3300; /* Rouge orangé */
+      }
+      6.67% {
+          background-color: #ff6600; /* Orangé */
+      }
+      10% {
+          background-color: #ff9900; /* Orangé jaune */
+      }
+      13.33% {
+          background-color: #ffcc00; /* Jaune orangé */
+      }
+      16.67% {
+          background-color: #ffff00; /* Jaune */
+      }
+      20% {
+          background-color: #ccff00; /* Jaune vert */
+      }
+      23.33% {
+          background-color: #99ff00; /* Jaune citron vert */
+      }
+      26.67% {
+          background-color: #66ff00; /* Citron vert */
+      }
+      30% {
+          background-color: #33ff00; /* Vert citron */
+      }
+      33.33% {
+          background-color: #00ff00; /* Vert */
+      }
+      36.67% {
+          background-color: #00ff33; /* Vert turquoise */
+      }
+      40% {
+          background-color: #00ff66; /* Turquoise */
+      }
+      43.33% {
+          background-color: #00ff99; /* Turquoise cyan */
+      }
+      46.67% {
+          background-color: #00ffcc; /* Cyan turquoise */
+      }
+      50% {
+          background-color: #00ffff; /* Cyan */
+      }
+      53.33% {
+          background-color: #00ccff; /* Cyan bleu */
+      }
+      56.67% {
+          background-color: #0099ff; /* Bleu cyan */
+      }
+      60% {
+          background-color: #0066ff; /* Cyan bleu */
+      }
+      63.33% {
+          background-color: #0033ff; /* Bleu cyan */
+      }
+      66.67% {
+          background-color: #0000ff; /* Bleu */
+      }
+      70% {
+          background-color: #3300ff; /* Bleu violet */
+      }
+      73.33% {
+          background-color: #6600ff; /* Violet bleu */
+      }
+      76.67% {
+          background-color: #9900ff; /* Violet */
+      }
+      80% {
+          background-color: #cc00ff; /* Violet magenta */
+      }
+      83.33% {
+          background-color: #ff00ff; /* Magenta */
+      }
+      86.67% {
+          background-color: #ff00cc; /* Magenta rose */
+      }
+      90% {
+          background-color: #ff0099; /* Rose magenta */
+      }
+      93.33% {
+          background-color: #ff0066; /* Magenta rose */
+      }
+      96.67% {
+          background-color: #ff0033; /* Rose magenta */
+      }
+      100% {
+          background-color: #ff0000; /* Rouge */
+      }
+  }
+
+  
+  .chat {
     text-align: center;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
-    padding: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: #fff;
+
   }
-  
-  .App-header {
-    margin-bottom: 20px;
+
+  .title{
+    font-size: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    user-select: none;
   }
   
   button {
-    background: linear-gradient(45deg, #ff6b6b, #f06595);
-    border: none;
+background-color: black;    border: none;
     border-radius: 25px;
     color: #fff;
-    padding: 10px 20px;
+    padding:  12px;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: 0.1s ease-in;
   }
-  
+
+  nav{
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 10vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+  }
+
   button:hover {
-    transform: scale(1.1);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  button:active {
-    transform: scale(0.9);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    scale: 105%;
+    transition: 0.1s ease-in;
+
   }
   
   input {
@@ -50,12 +160,17 @@ body {
     margin-right: 10px;
     width: calc(100% - 60px);
   }
+
+  .sign{
+  }
   
   form {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    padding: 20px;
+
   }
   
   .message {
@@ -87,3 +202,12 @@ body {
     word-wrap: break-word;
   }
   
+  .square {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.3s ease-out;
+    border-radius: 4px;
+    z-index: -1;
+    pointer-events: none; /* Pour que les carrés n'interfèrent pas avec les événements de la souris */
+}
