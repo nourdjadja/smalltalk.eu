@@ -1,5 +1,7 @@
 # 💬 smalltalk.eu
 
+https://smalltalk-eu.vercel.app/
+
 smalltalk.eu is a lightweight web application for chatting on a single channel. Built with ReactJS and Firebase/Firestore, this app leverages the power of modern web technologies to provide a simple and effective communication platform.
 
 ## 📋 Features
